@@ -12,12 +12,15 @@ int check_scalene(int a, int b, int c)
 {
   int scalene;
   if(a != b && b !=c && a != c)
+  {
   return scalene;
+  }
+  return 0;
 }
 
-void output(int a, int b, int c, int scalene)
+void output(int a, int b, int c, int isscalene)
 {
-  if(a != b && b !=c && a != c)
+  if(isscalene)
   printf("Triangle is scalene\n");
   else
   printf("Triangle is not scalene\n");
@@ -25,11 +28,11 @@ void output(int a, int b, int c, int scalene)
 
 int main()
 {
-  int a, b, c, scalene;
+  int a, b, c, isscalene;
   a = input_side();
   b = input_side();
   c = input_side();
-  scalene = check_scalene(a, b, c);
-  output(a, b, c, scalene);
+  isscalene = check_scalene(a, b, c);
+  output(a, b, c, isscalene);
   return 0;
 }
